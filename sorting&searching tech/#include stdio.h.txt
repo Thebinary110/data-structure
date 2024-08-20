@@ -1,0 +1,69 @@
+#include <stdio.h>
+
+void bubbleSort(int arr[], int size) {
+    for(int i=0; i<size-1; i++) {
+        for(int j=0; j<size-i-1; j++) {
+            if(arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+void insertionSort(int arr[], int n) {
+    int i, max, j;
+    for (i = 1; i < n; i++) {
+        max = arr[i];
+        j = i - 1;
+
+        while (j >= 0 && arr[j] > max) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = max;
+    }
+}
+
+void selectionSort(int arr[], int n) {
+    int i, j, minIndex, temp;
+    for (i = 0; i < n - 1; i++) {
+        minIndex = i;
+        for (j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex])
+                minIndex = j;
+        }
+        temp = arr[minIndex];
+        arr[minIndex] = arr[i];
+        arr[i] = temp;
+    }
+}
+
+void printArray (int arr[], int size) {
+    for(int i=0; i<size; i++) {
+        printf("%d", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int N ;
+    scanf("%d",&N);
+    int arr[N] ;
+    
+    int size = sizeof(arr) / sizeof(int);
+    for(int i=0 ; i<N ; i++){
+        scanf("%d",&arr[i]);
+    }
+     bubbleSort(arr, size);
+      printArray(arr, size);
+     insertionSort(arr, size);
+     printArray(arr, size);
+    selectionSort(arr, size);
+   
+    
+    printArray(arr, size);
+
+    return 0;
+}

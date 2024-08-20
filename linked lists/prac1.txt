@@ -1,0 +1,5 @@
+making  *
+printing *
+insertion(3) *** 
+deletion (3) ***
+reversal*

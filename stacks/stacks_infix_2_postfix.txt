@@ -1,0 +1,72 @@
+precedence of operators
+
+we will consider five operators --->> +,-,*,/,^
+
+priority order
+
+paranthesis will be solved first if there is any
+
+^ exponentiation -->> highest --> 1
+* multiplication and / division -->> middle --> 2
++ addition and - substraction -->> lowest --> 3
+
+
+infix expression are the expression in which the operators are between the operands.
+
+for the priority of the operators from left to right the first the first will be evaluated first.
+
+ex --->> 3 + 5 * 7 - 4 ^ 2 == 22.
+   --->> 500 + 5 ^ 3 - (10 + 56) * 9 == 31.
+
+
+postfix expression -->> these are the notations in which the operators come after the operands which is not easy for the readability of the humans but it is good for the readability of the computers because it gets compeleted in only one traversal.
+
+ex--->  infix expression -> a+b/c*d-e/(f+g)
+        postfix expression -> abc/d*+efg+/-
+
+
+to solve a postfix expression -->> the thumb rule -> 
+ we have to move from left to right and when we encounter an operator we will apply it to the previous two operands.
+
+ ex --> 3555/ *+22^-   will be 4.  
+
+
+Algorithm (for the type 1)--->
+
+scan the ysmbols of the expressions from left to right and for each symbol do the following 
+
+a). if symbol is an operand
+       print that symbol on to the screen .
+
+b). if the symbol is a left paranthesis
+       push it on the stack 
+
+c). if symbol is a right paranthesis
+       pop all the operators form the stack upto the first left paranthesis and print them in the screen
+
+       discard the left and right paranthesis
+
+d). if the symbol is an operator 
+       if the precendence of the oeprators in the stack are greater than or equal to the current operator then 
+
+              pop the operator out of the stack and print them onto the screen and psuh the current operator onto the stack 
+
+       else 
+           push the current operator onto the stack .        
+                   
+
+Algorithm(for type 2) --->>>
+
+in this part will push the operand instead of the operators.
+
+scan the symbols of the given postfix exprrssion form left to right and for each symbol do the following:
+
+1). if symbol is an oprand 
+         push it onto the stack.
+
+2). is sysmbol is an operator
+         pop two symbols out of the stack and apply the operator on these symbols.
+        push the result on the stack.
+
+3). after scanning all the symbols of the postfix expression pop the remaining symbol out of the stack and print on the screen . the remaining symbol is the result obtained after evaluatinng the postfix expression.                 
+     
